@@ -8,7 +8,7 @@
      * App launcher - need to use it here, so the proper azzurra scss is brought in!
      */
     Ext.define('MapHiveHosted.AppLauncher', {
-        extend: 'mh.AppLauncher'
+        extend: 'mh.dummy.AppLauncher'
     });
 
 }());
