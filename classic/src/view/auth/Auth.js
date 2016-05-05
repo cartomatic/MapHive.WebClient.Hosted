@@ -19,6 +19,12 @@
         'btnLogin|setUI': 'green-button',
         'btnLogin|setScale': 'medium',
 
+        'forgotPassView|setUI': 'orange-panel',
+        'btnResetPass|setUI': 'orange-button',
+        'btnResetPass|setScale': 'medium',
+        'btnResetPassCancel|setUI': 'green-button',
+        'btnResetPassCancel|setScale': 'medium',
+
         /**
          * Called when the view is created
          */
