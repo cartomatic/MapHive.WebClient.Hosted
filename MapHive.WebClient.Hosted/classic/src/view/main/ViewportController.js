@@ -213,12 +213,22 @@
                                     urlHash += ';suppress-app-toolbar:true';
 
                                     return urlBase + (urlParams.length > 0? '?' + urlParams.join('&') : '') + (urlHash ? '#' + urlHash : '');
-                                }
+                                },
+                                findAppUrl = function(appName){
+                                    var url = null;
+                                    Ext.Array.each(apps, function(a){
+                                        if(a.get('url').indexOf(appName) > -1){
+                                            url = a.get('url');
+                                            return false;
+                                        }
+                                    });
+                                    return url;
+                                };
 
                                 //since this is a demo, there should be 3 rec...
 
-                                document.getElementById('umbrella-iframe-1').src = modifyUrl(apps[1].get('url').split('#')[0] + '#some/hash/123/456') ;
-                                document.getElementById('umbrella-iframe-2').src = modifyUrl(apps[2].get('url'));
+                                document.getElementById('umbrella-iframe-1').src = modifyUrl(findAppUrl('test1')) ;
+                                document.getElementById('umbrella-iframe-2').src = modifyUrl(findAppUrl('test2'));
 
                             }, me, {single: true, tunnel: tunnel})
                             me.fireGlobal('root::getapps', null, {tunnel: tunnel});
