@@ -217,8 +217,16 @@
                                 findAppUrl = function(appName){
                                     var url = null;
                                     Ext.Array.each(apps, function(a){
-                                        if(a.get('url').indexOf(appName) > -1){
-                                            url = a.get('url');
+
+                                        //FIXME - need url with the same domain
+
+                                        if(a.get('urls').indexOf(appName) > -1){
+                                            Ext.Array.each(a.get('urls').split('|'), function(u){
+                                                if(u.indexOf(window.location.host) > -1){
+                                                    url = u;
+                                                }
+                                            });
+                                            url = url || a.get('urls').split('|')[0];
                                             return false;
                                         }
                                     });

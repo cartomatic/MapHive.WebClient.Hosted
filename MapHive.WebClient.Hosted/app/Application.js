@@ -17,7 +17,7 @@
         //global shared controllers - they fire up automatically
         controllers: [
             //use the default root
-            'mh.controller.Root',
+            'MapHive.controller.Root',
 
             //use the customised Root
             'MapHive.controller.Auth',
