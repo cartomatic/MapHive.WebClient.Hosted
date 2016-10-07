@@ -215,14 +215,18 @@
                                     return urlBase + (urlParams.length > 0? '?' + urlParams.join('&') : '') + (urlHash ? '#' + urlHash : '');
                                 },
                                 findAppUrl = function(appName){
-                                    var url = null;
+                                    var url = null,
+                                        hostParts = window.location.host.split('.'),
+                                        domain = (hostParts.length > 2 ? hostParts.splice(hostParts.length - 2) : hostParts).join('.');
+
+
                                     Ext.Array.each(apps, function(a){
 
                                         //FIXME - need url with the same domain
 
                                         if(a.get('urls').indexOf(appName) > -1){
                                             Ext.Array.each(a.get('urls').split('|'), function(u){
-                                                if(u.indexOf(window.location.host) > -1){
+                                                if(u.indexOf(domain) > -1){
                                                     url = u;
                                                 }
                                             });
