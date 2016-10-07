@@ -12,7 +12,13 @@
         requires: [
             'Ext.tip.QuickTipManager',
             'MapHiveHosted.view.main.Viewport',
-            'mh.module.appBar.AppBar'
+            'mh.module.appBar.AppBar',
+            //fix bloody codaxy build problems
+            'Ext.layout.container.Accordion',
+            'Ext.layout.container.Table',
+            'Ext.tab.Panel',
+            'Ext.panel.Panel',
+            'Ext.panel.Table'
         ],
 
         constructor: function(config){
